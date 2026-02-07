@@ -38,8 +38,8 @@ Weather data is treated as an **input to decision-making**, not just something t
 
 ---
 
-## Agentic Design (Lightweight & Intentional)
-This project implements a **lightweight agent loop**, appropriate for the scope of a kata.
+## Agentic Design
+This project implements a **lightweight agent loop**.
 At a high level:
 - The LLM is responsible for interpreting user intent and determining whether external data is needed
 - When weather information is relevant, the model requests it via a tool call
