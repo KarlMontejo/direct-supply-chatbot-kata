@@ -1,0 +1,30 @@
+{"id":1,"name":"Whole Wheat Bread Loaf","description":"Sliced whole wheat sandwich bread, 24 oz loaf","price":3.49,"stock_quantity":120,"supplier":"Golden Grain Foods","review_stars":4}
+{"id":2,"name":"2% Reduced Fat Milk","description":"Gallon of 2% reduced fat dairy milk","price":4.19,"stock_quantity":80,"supplier":"DairyPure Co","review_stars":5}
+{"id":3,"name":"Free Range Large Eggs","description":"Dozen free-range large brown eggs","price":5.29,"stock_quantity":60,"supplier":"Sunny Farm Collective","review_stars":5}
+{"id":4,"name":"Bananas","description":"Fresh yellow bananas sold per bunch","price":1.79,"stock_quantity":200,"supplier":"TropiFresh Produce","review_stars":4}
+{"id":5,"name":"Boneless Skinless Chicken Breast","description":"Raw boneless skinless chicken breast, 5 lb pack","price":18.99,"stock_quantity":45,"supplier":"Prime Poultry Inc","review_stars":4}
+{"id":6,"name":"Long Grain White Rice","description":"Long grain enriched white rice, 20 lb bag","price":14.49,"stock_quantity":70,"supplier":"Harvest Valley Foods","review_stars":4}
+{"id":7,"name":"Spaghetti Pasta","description":"Dry spaghetti pasta, 16 oz package","price":1.89,"stock_quantity":150,"supplier":"Bella Italia Foods","review_stars":4}
+{"id":8,"name":"Canned Diced Tomatoes","description":"Canned diced tomatoes in juice, 14.5 oz","price":1.39,"stock_quantity":180,"supplier":"Red Vine Canning","review_stars":3}
+{"id":9,"name":"Frozen Broccoli Florets","description":"Frozen broccoli florets, 2 lb bag","price":3.99,"stock_quantity":95,"supplier":"GreenFields Frozen","review_stars":4}
+{"id":10,"name":"Cheddar Cheese Block","description":"Sharp cheddar cheese block, 2 lb","price":7.99,"stock_quantity":55,"supplier":"DairyCraft Creamery","review_stars":5}
+{"id":11,"name":"Olive Oil Extra Virgin","description":"Extra virgin olive oil, 1 liter bottle","price":9.49,"stock_quantity":65,"supplier":"Mediterraneo Imports","review_stars":5}
+{"id":12,"name":"Peanut Butter","description":"Creamy peanut butter, 40 oz jar","price":5.99,"stock_quantity":110,"supplier":"NutHouse Brands","review_stars":4}
+{"id":13,"name":"Strawberry Jam","description":"Strawberry fruit spread, 18 oz jar","price":3.79,"stock_quantity":90,"supplier":"BerryBest Foods","review_stars":4}
+{"id":14,"name":"Rolled Oats","description":"Old-fashioned rolled oats, 42 oz container","price":4.29,"stock_quantity":130,"supplier":"Heartland Grains","review_stars":5}
+{"id":15,"name":"Canned Black Beans","description":"Canned black beans, 15 oz","price":1.19,"stock_quantity":210,"supplier":"Harvest Valley Foods","review_stars":4}
+{"id":16,"name":"All-Purpose Flour","description":"All-purpose enriched flour, 10 lb bag","price":6.49,"stock_quantity":85,"supplier":"MillStone Milling","review_stars":4}
+{"id":17,"name":"Granulated Sugar","description":"Granulated white sugar, 10 lb bag","price":7.29,"stock_quantity":75,"supplier":"SweetSource Refining","review_stars":3}
+{"id":18,"name":"Salted Butter","description":"Salted sweet cream butter, 1 lb","price":4.69,"stock_quantity":100,"supplier":"DairyCraft Creamery","review_stars":5}
+{"id":19,"name":"Frozen Ground Beef Patties","description":"Frozen 80/20 ground beef patties, 5 lb box","price":21.99,"stock_quantity":40,"supplier":"Midwest Meats Co","review_stars":4}
+{"id":20,"name":"Apple Juice","description":"100% apple juice, 64 oz bottle","price":3.29,"stock_quantity":115,"supplier":"Orchard Fresh Beverages","review_stars":4}
+{"id":21,"name":"Canned Tuna in Water","description":"Chunk light tuna in water, 5 oz can","price":1.59,"stock_quantity":190,"supplier":"OceanCatch Foods","review_stars":3}
+{"id":22,"name":"Frozen Pizza Cheese Blend","description":"Shredded mozzarella and provolone blend, 5 lb","price":13.49,"stock_quantity":50,"supplier":"Bella Italia Foods","review_stars":4}
+{"id":23,"name":"Corn Flakes Cereal","description":"Original corn flakes cereal, 18 oz box","price":3.99,"stock_quantity":140,"supplier":"MorningRise Foods","review_stars":3}
+{"id":24,"name":"Orange Juice","description":"100% orange juice with pulp, 59 oz carton","price":4.59,"stock_quantity":90,"supplier":"Citrus Grove Co","review_stars":4}
+{"id":25,"name":"Frozen Mixed Vegetables","description":"Frozen peas, carrots, corn mix, 3 lb bag","price":4.49,"stock_quantity":105,"supplier":"GreenFields Frozen","review_stars":4}
+{"id":26,"name":"Brown Rice","description":"Whole grain brown rice, 10 lb bag","price":8.99,"stock_quantity":65,"supplier":"Heartland Grains","review_stars":5}
+{"id":27,"name":"Chicken Noodle Soup","description":"Canned chicken noodle soup, 19 oz","price":2.19,"stock_quantity":160,"supplier":"HomeStyle Soups","review_stars":3}
+{"id":28,"name":"Vegetable Cooking Oil","description":"All-purpose vegetable oil, 1 gallon","price":10.99,"stock_quantity":55,"supplier":"Golden Harvest Oils","review_stars":4}
+{"id":29,"name":"Frozen Blueberries","description":"Frozen whole blueberries, 4 lb bag","price":9.79,"stock_quantity":60,"supplier":"Northern Berry Co","review_stars":5}
+{"id":30,"name":"Yogurt Plain Greek","description":"Plain nonfat Greek yogurt, 32 oz tub","price":5.49,"stock_quantity":85,"supplier":"Cultured Dairy Co","review_stars":5}
