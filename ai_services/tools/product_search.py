@@ -1,30 +1,59 @@
 """
-Product search tool — queries the in-memory product database via SQL.
+Database query tool — searches the in-memory procurement database via SQL.
+
+Supports queries across three tables: products, contracts, and inventory.
 """
 
+import json
 from langchain.tools import tool
-
-from backend.app.schemas.product import Product
 from ai_services.data_access.loader import db
 
 
 @tool
-def product_search(sql_query: str) -> list[Product]:
+def product_search(sql_query: str) -> str:
     """
-    Search for products in the database using SQL.
+    Query the procurement database using SQL. Returns results as JSON.
 
-    Database schema:
-    - Table: products
-    - Columns: id (INTEGER), name (TEXT), description (TEXT), price (REAL),
-      stock_quantity (INTEGER), supplier (TEXT), review_stars (INTEGER 1-5)
+    DATABASE SCHEMA
+    ===============
 
-    Examples:
-    - SELECT * FROM products WHERE name LIKE '%bread%'
-    - SELECT * FROM products WHERE price < 10 AND stock_quantity > 0
-    - SELECT * FROM products WHERE name LIKE '%bacon%' OR name LIKE '%lettuce%' OR name LIKE '%tomato%'
+    Table: products
+    ---------------
+    Columns: id (INTEGER PK), name (TEXT), brand (TEXT), category (TEXT),
+      description (TEXT), pack_size (TEXT), price (REAL), supplier (TEXT),
+      review_stars (INTEGER 1-5), ingredients (TEXT), calories_per_serving (INTEGER),
+      sodium_mg_per_serving (INTEGER), dietary_flags (TEXT — comma-separated,
+      e.g. "vegan,gluten_free,low_sodium,heart_healthy,diabetic_friendly,nut_free")
 
-    Always use LIKE with % wildcards for name searches. Quote string literals properly.
+    Categories: protein, dairy, grains_bread, pasta, pantry, produce,
+      beverage, breakfast, prepared_meals
+
+    Table: contracts
+    ----------------
+    Columns: id (INTEGER PK), category (TEXT), approved_brands (TEXT — comma-separated),
+      approved_pack_sizes (TEXT — comma-separated), approved_suppliers (TEXT — comma-separated),
+      required_dietary_flags (TEXT — comma-separated), prohibited_ingredients (TEXT — comma-separated),
+      max_sodium_mg_per_serving (INTEGER or NULL), max_price_per_unit (REAL or NULL),
+      facility (TEXT — always 'karls_senior_living_dallas', Karl's Senior Living of Dallas only),
+      effective_start (TEXT — ISO date), effective_end (TEXT — ISO date),
+      is_active (INTEGER — 1=active, 0=expired)
+
+    Table: inventory
+    ----------------
+    Columns: id (INTEGER PK), product_id (INTEGER FK→products.id),
+      distribution_center (TEXT — 'midwest_dc', 'southeast_dc', 'northeast_dc'),
+      quantity_available (INTEGER), stock_status (TEXT — 'in_stock', 'low_stock', 'out_of_stock'),
+      last_updated (TEXT — ISO timestamp), lead_time_days (INTEGER)
+
+    QUERY TIPS
+    ==========
+    - Use LIKE with % wildcards for text searches: WHERE name LIKE '%chicken%'
+    - Check contract compliance: WHERE approved_brands LIKE '%Prime Poultry%'
+    - Join products to inventory: SELECT p.*, i.quantity_available, i.stock_status
+        FROM products p JOIN inventory i ON p.id = i.product_id
+    - Filter active contracts: WHERE is_active = 1
+    - All contracts apply to Karl's Senior Living of Dallas: WHERE facility = 'karls_senior_living_dallas'
     """
     cursor = db.execute(sql_query)
     rows = cursor.fetchall()
-    return [Product(**row) for row in rows]
+    return json.dumps([dict(row) for row in rows], default=str)

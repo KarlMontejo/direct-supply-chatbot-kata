@@ -1,8 +1,10 @@
 """
 In-memory SQLite database initialization and seed data loading.
 
-Loads the product schema from backend/db/schema.sql and seeds it
-with product data from ai_services/data/products.jsonl.
+Loads the schema from backend/db/schema.sql and seeds three tables:
+  - products   (from ai_services/data/products.jsonl)
+  - contracts  (from ai_services/data/contracts.jsonl)
+  - inventory  (from ai_services/data/inventory.jsonl)
 """
 
 import json
@@ -14,6 +16,8 @@ _PROJECT_ROOT = _AI_SERVICES_ROOT.parent
 
 SCHEMA_PATH = _PROJECT_ROOT / "backend" / "db" / "schema.sql"
 PRODUCTS_PATH = _AI_SERVICES_ROOT / "data" / "products.jsonl"
+CONTRACTS_PATH = _AI_SERVICES_ROOT / "data" / "contracts.jsonl"
+INVENTORY_PATH = _AI_SERVICES_ROOT / "data" / "inventory.jsonl"
 
 
 def _load_jsonl(conn: sqlite3.Connection, table: str, path: Path) -> None:
@@ -30,15 +34,18 @@ def _load_jsonl(conn: sqlite3.Connection, table: str, path: Path) -> None:
 
 def init_db() -> sqlite3.Connection:
     """
-    Create an in-memory SQLite database, apply the product schema,
-    and seed it with product data.
+    Create an in-memory SQLite database, apply the schema,
+    and seed all tables with mock data.
 
     Returns a ready-to-query connection with Row factory enabled.
     """
     conn = sqlite3.connect(":memory:", check_same_thread=False)
 
     conn.executescript(SCHEMA_PATH.read_text())
+
     _load_jsonl(conn, "products", PRODUCTS_PATH)
+    _load_jsonl(conn, "contracts", CONTRACTS_PATH)
+    _load_jsonl(conn, "inventory", INVENTORY_PATH)
     conn.commit()
 
     conn.row_factory = sqlite3.Row
