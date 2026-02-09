@@ -150,5 +150,5 @@ The frontend runs on `localhost:3000`, the backend on `localhost:8000`.
 ## Notes
 
 - The mock data is designed for demonstration, not production. In a real system, the JSONL files would be replaced by enterprise inventory, contract, and supplier APIs.
-- The in-memory SQLite database resets on every server restart — there is no persistence.
+- The in-memory SQLite database resets on every server restart and there is no persistence.
 - The chatbot does not execute orders. It produces recommendations that humans review and approve.
